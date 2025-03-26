@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Array</title>
+    <link href="https://fonts.googleapis.com/css2?family=Serif" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: serif;
+            background-color: #E5E5E5;
+            text-align: center;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+        }
+        .header {
+            width: 100%;
+            background: #DADADA;
+            text-align: center;
+            font-size: 24px;
+            padding: 15px 0;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+        .graph {
+            margin-top: 60px;
+            width: 90%;
+            max-width: 800px;
+        }
+        .description {
+            font-size: 18px;
+            margin: 20px;
+            max-width: 800px;
+        }
+        .nav-buttons {
+            position: absolute;
+            bottom: 20px;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            padding: 0 30px;
+        }
+        .button {
+            width: 60px;
+            height: 60px;
+            background: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+            cursor: pointer;
+            font-size: 24px;
+            text-decoration: none;
+            color: black;
+        }
+        .page-number {
+            position: absolute;
+            bottom: 30px;
+            right: 100px;
+            font-size: 16px;
+        }
+        .top-right {
+            position: absolute;
+            top: 10px;
+            right: 50px;
+            display: flex;
+            gap: 15px;
+        }
+        .icon {
+            font-size: 24px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">ARRAY</div>
+    <div class="top-right">
+        <div class="icon">📖</div>
+        <div class="icon">☰</div>
+    </div>
+    <img class="graph" src="./Pic/c01fc4b2-4312-4c04-8afd-d1b56393884b.jpg" alt="Array Resizing Graph">
+    <div class="description">
+        The number of resizing increases much less than the size of the array. 
+        For example, to get an array of 256 elements, we need to do no more than 8 doublings, 
+        for 512 elements - 9, and so on.
+    </div>
+    <div class="nav-buttons">
+        <a href="47.html" class="button">&#x21A9;</a>
+        <div class="page-number">18 / 30</div>
+        <a href="49.html" class="button">&#x2192;</a>
+    </div>
+</body>
+</html>

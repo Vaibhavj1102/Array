@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Array Insertion & Deletion</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: serif;
+            background-color: #E5E5E5;
+            text-align: center;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+        }
+        /* Header */
+        .header {
+            width: 100%;
+            background: #DADADA;
+            text-align: center;
+            font-size: 24px;
+            font-weight: bold;
+            padding: 15px 0;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+        /* Container for the two diagrams */
+        .diagram-container {
+            display: flex;
+            justify-content: space-around;
+            width: 80%;
+            margin-top: 30px;
+        }
+        /* Individual diagram (left & right) */
+        .diagram {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        /* Index numbers */
+        .index-container {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            font-size: 16px;
+            font-weight: bold;
+        }
+        /* Array representation */
+        .array-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 5px;
+            margin: 10px 0;
+            position: relative;
+        }
+        /* Individual boxes */
+        .array-box {
+            width: 40px;
+            height: 40px;
+            border: 2px solid black;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 18px;
+            background: white;
+            font-weight: bold;
+        }
+        /* Highlighted elements in dashed boxes */
+        .highlight {
+            border: 2px dashed black;
+            padding: 2px;
+            display: flex;
+        }
+        /* Inserted element */
+        .inserted {
+            color: green;
+            font-weight: bold;
+        }
+        /* Deleted element */
+        .deleted {
+            color: red;
+            font-weight: bold;
+        }
+        /* Arrow */
+        .arrow {
+            font-size: 24px;
+            margin: 5px 0;
+        }
+        /* Labels for insertion and deletion */
+        .label {
+            font-size: 18px;
+            font-style: italic;
+            margin-bottom: 5px;
+        }
+        /* Description text */
+        .description {
+            position: absolute;
+            bottom: 100px;
+            width: 70%;
+            font-size: 18px;
+            font-style: italic;
+            color: #333;
+        }
+        /* Navigation buttons */
+        .nav-buttons {
+            position: absolute;
+            bottom: 20px;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            padding: 0 30px;
+        }
+        .button {
+            width: 60px;
+            height: 60px;
+            background: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+            cursor: pointer;
+            font-size: 24px;
+            text-decoration: none;
+            color: black;
+        }
+        /* Page number */
+        .page-number {
+            position: absolute;
+            bottom: 30px;
+            right: 100px;
+            font-size: 16px;
+            font-weight: bold;
+        }
+        /* Top right icons */
+        .top-right {
+            position: absolute;
+            top: 15px;
+            right: 20px;
+            display: flex;
+            gap: 15px;
+        }
+        .icon {
+            font-size: 24px;
+            cursor: pointer;
+            transition: transform 0.2s ease-in-out;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <div class="header">ARRAY</div>
+
+    <!-- Main Diagram Container -->
+    <div class="diagram-container">
+
+        <!-- Insertion Section -->
+        <div class="diagram">
+            <div class="index-container">
+                <span>0</span><span>1</span><span>2</span><span>3</span><span>4</span><span>5</span><span>6</span><span>7</span>
+            </div>
+            <div class="array-container">
+                <div class="array-box">a</div>
+                <div class="array-box">b</div>
+                <div class="highlight">
+                    <div class="array-box">c</div>
+                    <div class="array-box">d</div>
+                    <div class="array-box">e</div>
+                </div>
+                <div class="array-box"></div>
+                <div class="array-box"></div>
+            </div>
+            <div class="arrow">⬇</div>
+            <div class="label">inserting f at index 2</div>
+            <div class="array-container">
+                <div class="array-box">a</div>
+                <div class="array-box">b</div>
+                <div class="inserted array-box">f</div>
+                <div class="highlight">
+                    <div class="array-box">c</div>
+                    <div class="array-box">d</div>
+                    <div class="array-box">e</div>
+                </div>
+                <div class="array-box"></div>
+                <div class="array-box"></div>
+            </div>
+        </div>
+
+        <!-- Deletion Section -->
+        <div class="diagram">
+            <div class="index-container">
+                <span>0</span><span>1</span><span>2</span><span>3</span><span>4</span><span>5</span><span>6</span><span>7</span>
+            </div>
+            <div class="array-container">
+                <div class="array-box">a</div>
+                <div class="array-box">b</div>
+                <div class="deleted array-box">c</div>
+                <div class="highlight">
+                    <div class="array-box">d</div>
+                    <div class="array-box">e</div>
+                </div>
+                <div class="array-box"></div>
+                <div class="array-box"></div>
+            </div>
+            <div class="arrow">⬇</div>
+            <div class="label">deleting at index 2</div>
+            <div class="array-container">
+                <div class="array-box">a</div>
+                <div class="array-box">b</div>
+                <div class="highlight">
+                    <div class="array-box">d</div>
+                    <div class="array-box">e</div>
+                </div>
+                <div class="array-box"></div>
+                <div class="array-box"></div>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Description -->
+    <div class="description">
+        The considered technique is also applicable for arbitrary index i ≤ size - 1 
+        (if i = size - 1, no values are shifted).
+    </div>
+
+    <!-- Navigation Buttons -->
+    <div class="nav-buttons">
+        <a href="55.html" class="button">&#x21A9;</a> <!-- Left Arrow -->
+        <div class="page-number">26 / 30</div>
+        <a href="57.html" class="button">&#x2192;</a> <!-- Right Arrow -->
+    </div>
+
+    <!-- Top Right Icons -->
+    <div class="top-right">
+        <div class="icon">&#x1F4D6;</div> <!-- Book Icon -->
+        <div class="icon">&#9776;</div> <!-- Menu Icon -->
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Array Complexity</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: serif;
+            background-color: #E5E5E5;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            height: 100vh;
+            justify-content: center;
+            position: relative;
+        }
+        /* Header */
+        .header {
+            width: 100%;
+            background: #DADADA;
+            font-size: 22px;
+            font-weight: bold;
+            padding: 15px 0;
+            position: absolute;
+            top: 0;
+            text-align: center;
+        }
+        /* Graph Container */
+        .graph-container {
+            position: relative;
+            width: 700px;
+            height: 400px;
+            background: #E5E5E5;
+            margin-top: 40px;
+            padding: 20px;
+            border-radius: 10px;
+           
+        }
+        /* Axes */
+        .axis {
+            position: absolute;
+            background: black;
+        }
+        .x-axis {
+            width: 90%;
+            height: 2px;
+            bottom: 30px;
+            left: 5%;
+        }
+        .y-axis {
+            width: 2px;
+            height: 85%;
+            bottom: 30px;
+            left: 40px;
+        }
+        /* Arrowheads */
+        .arrow {
+            position: absolute;
+            width: 0;
+            height: 0;
+            border-style: solid;
+        }
+        .x-arrow {
+            bottom: 26px;
+            right: 5%;
+            border-width: 6px 0 6px 12px;
+            border-color: transparent transparent transparent black;
+        }
+        .y-arrow {
+            top: 20px;
+            left: 35px;
+            border-width: 12px 6px 0 6px;
+            border-color: black transparent transparent transparent;
+        }
+        /* Complexity Lines */
+        .worst-case {
+            position: absolute;
+            width: 90%;
+            height: 2px;
+            background: red;
+            transform: rotate(-32deg);
+            transform-origin: left bottom;
+            bottom: 0;
+            left: 0;
+        }
+
+        
+        .amortized {
+            position: absolute;
+            width: 90%;
+            height: 2px;
+            background: green;
+            top: 75%;
+            left:6%;
+        }
+        /* Labels */
+        .x-label {
+            position: absolute;
+            bottom: -10px;
+            right: 300px;
+            font-size: 16px;
+        }
+
+        .x-label1 {
+            position: absolute;
+            bottom: -10px;
+            right: 40px;
+            font-size: 16px;
+        }
+        .y-label {
+            position: absolute;
+            top: 50%;
+            left: -30px;
+            font-size: 16px;
+            transform: rotate(-90deg);
+        }
+        .worst-label {
+            position: absolute;
+            top: 30px;
+            right: 40px;
+            font-size: 14px;
+            color: red;
+        }
+        .amortized-label {
+            position: absolute;
+            bottom: 50px;
+            right: 120px;
+            font-size: 14px;
+            color: green;
+        }
+        /* Description */
+        .description {
+            margin-top: 80px;
+            width: 80%;
+            font-size: 18px;
+        }
+        /* Navigation Buttons */
+        .nav-buttons {
+            position: absolute;
+            bottom: 20px;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            padding: 0 50px;
+        }
+        .button {
+            width: 50px;
+            height: 50px;
+            background: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+            cursor: pointer;
+            font-size: 24px;
+            text-decoration: none;
+            color: black;
+        }
+        /* Page Number */
+        .page-number {
+            position: absolute;
+            bottom: 30px;
+            right: 100px;
+            font-size: 16px;
+        }
+        /* Top Right Icons */
+        .top-right {
+            position: absolute;
+            top: 15px;
+            right: 20px;
+            display: flex;
+            gap: 15px;
+        }
+        .icon {
+            font-size: 24px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <div class="header">ARRAY</div>
+
+    <!-- Graph Container -->
+    <div class="graph-container">
+        <!-- Axes -->
+        <div class="axis x-axis"></div>
+        <div class="axis y-axis"></div>
+
+        <!-- Arrows -->
+        <div class="arrow x-arrow"></div>
+        <div class="arrow y-arrow"></div>
+
+        <!-- Complexity Lines -->
+        <div class="worst-case"></div>
+        <div class="amortized"></div>
+        
+
+        <!-- Labels -->
+        <div class="x-label">array size</div>
+        <div class="x-label1">n</div>
+        <div class="y-label">time complexity</div>
+        <div class="worst-label">worst-case<br>(maximum time taken by insertion)</div>
+        <div class="amortized-label">amortized<br>(worst-case of a sequence of insertions)</div>
+    </div>
+
+    <!-- Description -->
+    <div class="description">
+        Using this fact, we can apply an <em>amortized analysis</em>, from which it follows that the 
+        amortized time complexity of insertion at the end is O(1).
+    </div>
+
+    <!-- Navigation Buttons -->
+    <div class="nav-buttons">
+        <a href="48.html" class="button">&#x21A9;</a> <!-- Left Arrow -->
+        <div class="page-number">19 / 30</div>
+        <a href="50.html" class="button">&#x2192;</a> <!-- Right Arrow -->
+    </div>
+
+    <!-- Top Right Icons -->
+    <div class="top-right">
+        <div class="icon">&#x1F4D6;</div> <!-- Book Icon -->
+        <div class="icon">&#9776;</div> <!-- Menu Icon -->
+    </div>
+
+</body>
+</html>

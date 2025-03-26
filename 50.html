@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Array Deletion</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: serif;
+            background-color: #E5E5E5;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            height: 100vh;
+            justify-content: center;
+            position: relative;
+        }
+        /* Header */
+        .header {
+            width: 100%;
+            background: #DADADA;
+            font-size: 22px;
+            font-weight: bold;
+            padding: 15px 0;
+            position: absolute;
+            top: 0;
+            text-align: center;
+        }
+        /* Array Container */
+        .array-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-top: 50px;
+        }
+        .array-box {
+            display: flex;
+            border: 2px solid black;
+            margin: 10px 0;
+        }
+        .array-box div {
+            width: 40px;
+            height: 40px;
+            border-right: 2px solid black;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 18px;
+        }
+        .array-box div:last-child {
+            border-right: none;
+        }
+        .deleted {
+            color: red;
+            font-weight: bold;
+        }
+        /* Arrow */
+        .arrow {
+            font-size: 24px;
+            margin: 10px 0;
+        }
+        /* Step Labels */
+        .step {
+            font-size: 16px;
+            margin-bottom: 5px;
+        }
+        .step span {
+            color: blue;
+        }
+        /* Description */
+        .description {
+            margin-top: 20px;
+            width: 80%;
+            font-size: 18px;
+        }
+        /* Navigation Buttons */
+        .nav-buttons {
+            position: absolute;
+            bottom: 20px;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            padding: 0 50px;
+        }
+        .button {
+            width: 50px;
+            height: 50px;
+            background: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+            cursor: pointer;
+            font-size: 24px;
+            text-decoration: none;
+            color: black;
+        }
+        /* Page Number */
+        .page-number {
+            position: absolute;
+            bottom: 30px;
+            right: 100px;
+            font-size: 16px;
+        }
+        /* Top Right Icons */
+        .top-right {
+            position: absolute;
+            top: 15px;
+            right: 20px;
+            display: flex;
+            gap: 15px;
+        }
+        .icon {
+            font-size: 24px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <div class="header">ARRAY</div>
+
+    <!-- Array Illustration -->
+    <div class="array-container">
+        <!-- Initial Array -->
+        <div class="array-box">
+            <div>a</div>
+            <div>b</div>
+            <div>c</div>
+            <div>d</div>
+            <div class="deleted">e</div>
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+        <div class="arrow">↓</div>
+        <div class="step">step 1: deletion, <span>O(1)</span></div>
+
+        <!-- After Deletion -->
+        <div class="array-box">
+            <div>a</div>
+            <div>b</div>
+            <div>c</div>
+            <div>d</div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+        <div class="arrow">↓</div>
+        <div class="step">step 2: resizing, <span>O(n)</span></div>
+
+        <!-- After Resizing -->
+        <div class="array-box">
+            <div>a</div>
+            <div>b</div>
+            <div>c</div>
+            <div>d</div>
+        </div>
+    </div>
+
+    <!-- Description -->
+    <div class="description">
+        Similar reasoning can be applied to the case where we delete the last 
+        element from a dynamic array. If our implementation allows halving the 
+        underlying static array (when the size becomes equal to the capacity/2), 
+        then the time complexity of deletion is equal to the <em>amortized</em> O(1).
+    </div>
+
+    <!-- Navigation Buttons -->
+    <div class="nav-buttons">
+        <a href="49.html" class="button">&#x21A9;</a> <!-- Left Arrow -->
+        <div class="page-number">20 / 30</div>
+        <a href="51.html" class="button">&#x2192;</a> <!-- Right Arrow -->
+    </div>
+
+    <!-- Top Right Icons -->
+    <div class="top-right">
+        <div class="icon">&#x1F4D6;</div> <!-- Book Icon -->
+        <div class="icon">&#9776;</div> <!-- Menu Icon -->
+    </div>
+
+</body>
+</html>

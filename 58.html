@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Array Complexity Graph</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: serif;
+            background-color: #E5E5E5;
+            text-align: center;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+        }
+        /* Header */
+        .header {
+            width: 100%;
+            background: #DADADA;
+            text-align: center;
+            font-size: 24px;
+            font-weight: bold;
+            padding: 15px 0;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+        /* Graph Container */
+        .graph-container {
+            position: relative;
+            width: 500px;
+            height: 300px;
+            margin-top: 50px;
+        }
+        /* Axes */
+        .axis {
+            position: absolute;
+            background-color: black;
+        }
+        .x-axis {
+            width: 100%;
+            height: 2px;
+            bottom: 20px;
+            left: 0;
+        }
+        .y-axis {
+            height: 100%;
+            width: 2px;
+            left: 20px;
+            bottom: 0;
+        }
+        /* Arrows */
+        .arrow {
+            position: absolute;
+            width: 0;
+            height: 0;
+            border-style: solid;
+        }
+        .x-arrow {
+            border-width: 5px 0 5px 10px;
+            border-color: transparent transparent transparent black;
+            right: -5px;
+            bottom: 15px;
+        }
+        .y-arrow {
+            border-width: 10px 5px 0 5px;
+            border-color: black transparent transparent transparent;
+            top: -5px;
+            left: 15px;
+        }
+        /* Graph Line */
+        .graph-line {
+            position: absolute;
+            width: 100%;
+            height: 2px;
+            background-color: red;
+            transform: rotate(-25deg);
+            transform-origin: left;
+            top: 275px;
+            left: 20px;
+        }
+        /* Labels */
+        .label {
+            position: absolute;
+            font-size: 16px;
+        }
+        .label-x {
+            bottom: 0;
+            right: 20px;
+        }
+        .label-y {
+            left: -20px;
+            top: 10px;
+            writing-mode: vertical-rl;
+            transform: rotate(180deg);
+        }
+        .label-o {
+            position: absolute;
+            top: 30px;
+            right: 30px;
+            color: red;
+            font-weight: bold;
+        }
+        /* Description */
+        .description {
+            position: absolute;
+            bottom: 90px;
+            width: 70%;
+            font-size: 18px;
+            font-style: italic;
+        }
+        /* Navigation Buttons */
+        .nav-buttons {
+            position: absolute;
+            bottom: 20px;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            padding: 0 30px;
+        }
+        .button {
+            width: 60px;
+            height: 60px;
+            background: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+            cursor: pointer;
+            font-size: 24px;
+            text-decoration: none;
+            color: black;
+        }
+        /* Page Number */
+        .page-number {
+            position: absolute;
+            bottom: 30px;
+            right: 100px;
+            font-size: 16px;
+        }
+        /* Top Right Icons */
+        .top-right {
+            position: absolute;
+            top: 15px;
+            right: 20px;
+            display: flex;
+            gap: 15px;
+        }
+        .icon {
+            font-size: 24px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <div class="header">ARRAY</div>
+
+    <!-- Graph Container -->
+    <div class="graph-container">
+        <!-- Axes -->
+        <div class="axis x-axis"></div>
+        <div class="axis y-axis"></div>
+
+        <!-- Arrows -->
+        <div class="arrow x-arrow"></div>
+        <div class="arrow y-arrow"></div>
+
+        <!-- Graph Line -->
+        <div class="graph-line"></div>
+
+        <!-- Labels -->
+        <div class="label label-x">n</div>
+        <div class="label label-y">time complexity</div>
+        <div class="label label-o">O(n)</div>
+    </div>
+
+    <!-- Description -->
+    <div class="description">
+        The time complexity of insertion and deletion at the beginning or middle part of the array is O(n). 
+        This is due to the fact that we shift left or right K*n (0 &lt; K &le; 1) elements.
+    </div>
+
+    <!-- Navigation Buttons -->
+    <div class="nav-buttons">
+        <a href="57.html" class="button">&#x21A9;</a> <!-- Left Arrow -->
+        <div class="page-number">28 / 30</div>
+        <a href="59.html" class="button">&#x2192;</a> <!-- Right Arrow -->
+    </div>
+
+    <!-- Top Right Icons -->
+    <div class="top-right">
+        <div class="icon">&#x1F4D6;</div> <!-- Book Icon -->
+        <div class="icon">&#9776;</div> <!-- Menu Icon -->
+    </div>
+
+</body>
+</html>

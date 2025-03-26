@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Array Information</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: serif;
+            background-color: #E5E5E5;
+            text-align: center;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+        }
+        /* Header */
+        .header {
+            width: 100%;
+            background: #DADADA;
+            text-align: center;
+            font-size: 24px;
+            font-weight: bold;
+            padding: 15px 0;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+        /* Content Text */
+        .content {
+            width: 70%;
+            font-size: 20px;
+            text-align: center;
+            line-height: 1.6;
+        }
+        /* Navigation Buttons */
+        .nav-buttons {
+            position: absolute;
+            bottom: 20px;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            padding: 0 30px;
+        }
+        .button {
+            width: 60px;
+            height: 60px;
+            background: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+            cursor: pointer;
+            font-size: 24px;
+            text-decoration: none;
+            color: black;
+        }
+        /* Page Number */
+        .page-number {
+            position: absolute;
+            bottom: 30px;
+            right: 100px;
+            font-size: 16px;
+        }
+        /* Top Right Icons */
+        .top-right {
+            position: absolute;
+            top: 15px;
+            right: 20px;
+            display: flex;
+            gap: 15px;
+        }
+        .icon {
+            font-size: 24px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <div class="header">ARRAY</div>
+
+    <!-- Content -->
+    <div class="content">
+        An array is a data structure that stores a collection of related elements, 
+        typically of the same data type, in contiguous memory locations. There are 
+        several types of arrays, including static (fixed-size) and dynamic arrays. 
+        Static arrays have a predetermined size and cannot be resized, while dynamic 
+        arrays can be resized as needed. Arrays are widely used in many programming 
+        languages, as they provide an efficient way to store and access data using 
+        index-based addressing, which allows for fast retrieval and modification 
+        of elements. However, arrays also have some limitations, such as a fixed 
+        maximum size for static arrays and potential overhead for dynamic arrays 
+        in terms of memory allocation and resizing operations.
+    </div>
+
+    <!-- Navigation Buttons -->
+    <div class="nav-buttons">
+        <a href="59.html" class="button">&#x21A9;</a> <!-- Left Arrow -->
+        <div class="page-number">30 / 30</div>
+        
+    </div>
+
+    <!-- Top Right Icons -->
+    <div class="top-right">
+        <div class="icon">&#x1F4D6;</div> <!-- Book Icon -->
+        <div class="icon">&#9776;</div> <!-- Menu Icon -->
+    </div>
+
+</body>
+</html>

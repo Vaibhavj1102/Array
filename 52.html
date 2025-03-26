@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Array Example</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: serif;
+            background-color: #E5E5E5;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            height: 100vh;
+            justify-content: center;
+            position: relative;
+        }
+        /* Header */
+        .header {
+            width: 100%;
+            background: #DADADA;
+            font-size: 22px;
+            font-weight: bold;
+            padding: 15px 0;
+            position: absolute;
+            top: 0;
+            text-align: center;
+        }
+        /* Main Text */
+        .content {
+            width: 60%;
+            font-size: 20px;
+            text-align: center;
+            line-height: 1.6;
+        }
+        .highlight-blue {
+            color: blue;
+            font-weight: bold;
+        }
+        .highlight-red {
+            color: red;
+            font-weight: bold;
+        }
+        /* Methods Section */
+        .methods {
+            display: flex;
+            justify-content: center;
+            width: 60%;
+            margin-top: 20px;
+            font-size: 18px;
+            text-align: left;
+            gap: 80px;
+        }
+        .methods div {
+            display: flex;
+            flex-direction: column;
+        }
+        .blue-methods {
+            color: blue;
+            text-align: left;
+        }
+        .red-methods {
+            color: red;
+            text-align: right;
+        }
+        /* Navigation Buttons */
+        .nav-buttons {
+            position: absolute;
+            bottom: 20px;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            padding: 0 50px;
+        }
+        .button {
+            width: 50px;
+            height: 50px;
+            background: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+            cursor: pointer;
+            font-size: 24px;
+            text-decoration: none;
+            color: black;
+        }
+        /* Page Number */
+        .page-number {
+            position: absolute;
+            bottom: 30px;
+            right: 100px;
+            font-size: 16px;
+        }
+        /* Top Right Icons */
+        .top-right {
+            position: absolute;
+            top: 15px;
+            right: 20px;
+            display: flex;
+            gap: 15px;
+        }
+        .icon {
+            font-size: 24px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <div class="header">ARRAY</div>
+
+    <!-- Content -->
+    <div class="content">
+        <span class="highlight-blue">List</span> in Python and 
+        <span class="highlight-red">ArrayList</span> in Java 
+        are examples of a dynamic array.<br>
+        Many other programming languages also support dynamic arrays.
+    </div>
+
+    <!-- Methods Section -->
+    <div class="methods">
+        <div class="blue-methods">
+            <div>list.append( )</div>
+            <div>list.insert( )</div>
+            <div>list.remove( )</div>
+            <div>list.pop( )</div>
+        </div>
+        <div class="red-methods">
+            <div>list.add( )</div>
+            <div>list.remove( )</div>
+        </div>
+    </div>
+
+    <!-- Navigation Buttons -->
+    <div class="nav-buttons">
+        <a href="51.html" class="button">&#x21A9;</a> <!-- Left Arrow -->
+        <div class="page-number">22 / 30</div>
+        <a href="53.html" class="button">&#x2192;</a> <!-- Right Arrow -->
+    </div>
+
+    <!-- Top Right Icons -->
+    <div class="top-right">
+        <div class="icon">&#x1F4D6;</div> <!-- Book Icon -->
+        <div class="icon">&#9776;</div> <!-- Menu Icon -->
+    </div>
+
+</body>
+</html>

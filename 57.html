@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Array Insertion</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: serif;
+            background-color: #E5E5E5;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            height: 100vh;
+            justify-content: center;
+            position: relative;
+        }
+        /* Header */
+        .header {
+            width: 100%;
+            background: #DADADA;
+            text-align: center;
+            font-size: 24px;
+            font-weight: bold;
+            padding: 15px 0;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+        /* Two Column Layout */
+        .container {
+            display: flex;
+            justify-content: space-around;
+            width: 80%;
+            margin-top: 80px;
+        }
+        /* Each Array Box */
+        .array-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .index-container {
+            display: flex;
+            justify-content: center;
+            gap: 45px;
+            font-size: 16px;
+            font-weight: bold;
+        }
+        .array-box {
+    display: flex;
+    justify-content: center; /* Centers content */
+    gap: 10px; /* Increases gap between boxes */
+    margin-top: 10px;
+}
+
+.box {
+    width: 50px; /* Slightly wider box for better spacing */
+    height: 50px;
+    border: 1px solid black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 20px; /* Adjusted font size */
+    background: white;
+}
+
+        /* Highlighted Box */
+        .highlight {
+            color: green;
+            font-weight: bold;
+        }
+        /* Dotted Border for Moving Elements */
+        .dotted {
+            border: 1px dashed black;
+            padding: 2px;
+        }
+        /* Error Message */
+        .error-message {
+            color: red;
+            font-weight: bold;
+            margin-top: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+        .error-icon {
+            font-size: 20px;
+        }
+        /* Navigation Buttons */
+        .nav-buttons {
+            position: absolute;
+            bottom: 20px;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            padding: 0 30px;
+        }
+        .button {
+            width: 60px;
+            height: 60px;
+            background: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+            cursor: pointer;
+            font-size: 24px;
+            text-decoration: none;
+            color: black;
+        }
+        /* Page number */
+        .page-number {
+            position: absolute;
+            bottom: 30px;
+            right: 100px;
+            font-size: 16px;
+            font-weight: bold;
+        }
+        /* Description */
+        .description {
+            position: absolute;
+            bottom: 80px;
+            width: 70%;
+            font-size: 18px;
+        }
+
+        .top-right {
+            position: absolute;
+            top: 15px;
+            right: 20px;
+            display: flex;
+            gap: 15px;
+        }
+        .icon {
+            font-size: 24px;
+            cursor: pointer;
+            transition: transform 0.2s ease-in-out;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <div class="header">ARRAY</div>
+
+    <!-- Two Arrays Side by Side -->
+    <div class="container">
+        <!-- Left: Dynamic Array -->
+        <div class="array-container">
+            <div class="index-container">
+                <span>0</span><span>1</span><span>2</span><span>3</span><span>4</span><span>5</span><span>6</span><span>7</span>
+            </div>
+            <div class="array-box">
+                <div class="box">a</div>
+                <div class="box">b</div>
+                <div class="box dotted">c</div>
+                <div class="box dotted">d</div>
+                <div class="box">e</div>
+                <div class="box dotted">f</div>
+                <div class="box">g</div>
+            </div>
+            <div>↓ inserting <span class="highlight">s</span> at index 5</div>
+            <div class="array-box">
+                <div class="box">a</div>
+                <div class="box">b</div>
+                <div class="box">c</div>
+                <div class="box">d</div>
+                <div class="box">e</div>
+                <div class="box dotted highlight">s</div>
+                <div class="box dotted">f</div>
+                <div class="box">g</div>
+            </div>
+        </div>
+
+        <!-- Right: Static Array -->
+        <div class="array-container">
+            <div class="index-container">
+                <span>0</span><span>1</span><span>2</span><span>3</span><span>4</span><span>5</span><span>6</span><span>7</span>
+            </div>
+            <div class="array-box">
+                <div class="box">a</div>
+                <div class="box">b</div>
+                <div class="box">c</div>
+                <div class="box">d</div>
+                <div class="box">e</div>
+                <div class="box">f</div>
+                <div class="box">g</div>
+                <div class="box">h</div>
+            </div>
+            <div>↓ inserting <span class="highlight">s</span> at index 5</div>
+            <div class="array-box">
+                <div class="box"></div> <!-- Empty Array -->
+                <div class="box"></div>
+                <div class="box"></div>
+                <div class="box"></div>
+                <div class="box"></div>
+                <div class="box"></div>
+                <div class="box"></div>
+            </div>
+            <div class="error-message">
+                <span class="error-icon">❗</span> Fail to insert - static array is full
+            </div>
+        </div>
+    </div>
+
+    <!-- Description -->
+    <div class="description">
+        If the array is <strong>static</strong>, we can delete without restriction. 
+        However, to insert into a static array, we must have free space for shifting.
+    </div>
+
+    <!-- Navigation Buttons -->
+    <div class="nav-buttons">
+        <a href="55.html" class="button">&#x21A9;</a> <!-- Left Arrow -->
+        <div class="page-number">27 / 30</div>
+        <a href="58.html" class="button">&#x2192;</a> <!-- Right Arrow -->
+    </div>
+    <div class="top-right">
+        <div class="icon">&#x1F4D6;</div> <!-- Book Icon -->
+        <div class="icon">&#9776;</div> <!-- Menu Icon -->
+    </div>
+
+</body>
+</html>
